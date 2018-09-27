@@ -13,36 +13,35 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
 	var ID2=100004359125508; // id ly gia
 	var IDG=1590386811002851; // id group chat
 	var url="https://goo.gl/3kY3An"; // sheets log
-	var pattern=/\s{0,1}(sp)[0-9]*\s/i; // chuoi chinh quy
+	var pattern=/sp[0-9]*/ig; // chuoi chinh quy
 	var d=new Date();
-	var num=0;
-	
+	var num=1;
 
 	api.listen(function callback(err, message) {
 		if (message.body==="getid"||message.body==="Getid"||message.body==="GetID"||message.body==="/getid") {
 			
-			console.log("1. FB.com/" + message.threadID + ' - Message: ' + message.body);
+			console.log("1. FB.com/" + message.threadID + ' - Message: ' + message.body+' - time : '+d.toUTCString());
 			api.sendMessage("ID : "+message.threadID,message.threadID);
 			api.sendMessage("time : "+d.toUTCString(),message.threadID);
 		}
 		//Ví dụ nếu mình set message.body = /Jarvis thì bot sẽ print api.sendMessage = Send bobs n vegena... 
 		else if ((message.body === "ok" || message.body === "Ok")&&message.senderID==ID) {
 
-			console.log("2. FB.com/" + message.threadID + ' - Message: ' + message.body);
+			console.log("2. FB.com/" + message.threadID + ' - Message: ' + message.body+' - time : '+d.toUTCString());
 
 			api.sendMessage("_____ok_____", ID);
 
-			api.sendMessage("ok chi",IDG);
+			api.sendMessage("ok chi \n( not read img , plase u not send img , thanks u)",IDG);
 			
 			api.sendMessage("xac nhan dang sp",ID2)
-			api.sendMessage("time : "+d.toUTCString(),ID2);
+			api.sendMessage(" time : "+d.toUTCString(),ID2);
 			
 			return;
 		}
 		//message.body = tin nhắn bạn send cho bot
 		else if (pattern.exec(message.body)) {
 			// ghi log nguoi gui
-			console.log("3. FB.com/" + message.threadID + ' - Message: ' + message.body);
+			console.log("3. FB.com/" + message.threadID + ' - Message: ' + message.body+' - time : '+d.toUTCString());
 			// gui phan hoi cho ktv
 			api.sendMessage("_____co sp moi nhe _____",ID);
 			api.sendMessage("Check log có khách thì sp nhẽ !!" , ID);
