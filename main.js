@@ -19,10 +19,13 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
 
 	api.listen(function callback(err, message) {
 		if (message.body==="getid"||message.body==="Getid"||message.body==="GetID"||message.body==="/getid") {
-			
+			var nums=1;
 			console.log("1. FB.com/" + message.threadID + ' - Message: ' + message.body+' - time : '+d.toUTCString());
+
+			api.sendMessage(nums,message.threadID);
 			api.sendMessage("ID : "+message.threadID,message.threadID);
 			api.sendMessage("time : "+d.toUTCString(),message.threadID);
+			nums++;
 		}
 		//Ví dụ nếu mình set message.body = /Jarvis thì bot sẽ print api.sendMessage = Send bobs n vegena... 
 		else if ((message.body === "ok" || message.body === "Ok")&&message.senderID==ID) {
@@ -36,6 +39,7 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
 			api.sendMessage(num+"xac nhan dang sp",ID2)
 			api.sendMessage(" time : "+d.toUTCString(),ID2);
 			
+			num++;
 			return;
 		}
 		//message.body = tin nhắn bạn send cho bot
