@@ -29,11 +29,11 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
 
 			console.log("2. FB.com/" + message.threadID + ' - Message: ' + message.body+' - time : '+d.toUTCString());
 
-			api.sendMessage("_____ok_____", ID);
+			api.sendMessage(num+"_____ok_____", ID);
 
-			api.sendMessage("ok chi \n( not read img , plase u not send img , thanks u)",IDG);
+			api.sendMessage("ok chi "+num,IDG);
 			
-			api.sendMessage("xac nhan dang sp",ID2)
+			api.sendMessage(num+"xac nhan dang sp",ID2)
 			api.sendMessage(" time : "+d.toUTCString(),ID2);
 			
 			return;
@@ -43,13 +43,13 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
 			// ghi log nguoi gui
 			console.log("3. FB.com/" + message.threadID + ' - Message: ' + message.body+' - time : '+d.toUTCString());
 			// gui phan hoi cho ktv
-			api.sendMessage("_____co sp moi nhe _____",ID);
+			api.sendMessage(num+"_____co sp moi nhe _____",ID);
 			api.sendMessage("Check log có khách thì sp nhẽ !!" , ID);
 			api.sendMessage("link :"+url, ID);
 			api.sendMessage("time : "+d.toUTCString(),ID);
 
 			// xac nhan da gui
-			api.sendMessage("xac nhan da gui thong tin sp",ID2)
+			api.sendMessage(num+"xac nhan da gui thong tin sp",ID2)
 			api.sendMessage("time : "+d.toUTCString(),ID2);
 			
 			return;
