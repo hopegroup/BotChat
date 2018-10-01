@@ -20,11 +20,8 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
         if (message.body === "getid" || message.body === "Getid" || message.body === "GetID" || message.body === "/getid") {
 
             console.log("1. FB.com/" + message.threadID + ' - Message: ' + message.body + ' - Time : ' + d.toUTCString());
-
-            api.sendMessage(nums, message.threadID);
             api.sendMessage("ID : " + message.threadID, message.threadID);
             api.sendMessage("Time : " + d.toUTCString(), message.threadID);
-            nums++;
         }
         //Ví dụ nếu mình set message.body = /Jarvis thì bot sẽ print api.sendMessage = Send bobs n vegena... 
         else if ((message.body === "ok" || message.body === "Ok") && message.senderID == ID) {
@@ -56,6 +53,10 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
             api.sendMessage("Time : " + d.toUTCString(), ID2);
 
             return;
+        }
+        else if (message.body==="Karaoke"||message.body==="karaoke") {
+        	api.sendMessage("Link Add Music : https://goo.gl/forms/ibKrgHgD9KpRp0JA3",message.threadID);
+        	api.sendMessage("Link List Music : https://goo.gl/BsZEoq",message.threadID);
         }
     });
 });
