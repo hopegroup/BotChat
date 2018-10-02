@@ -30,12 +30,16 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
 
             api.sendMessage("_____ok_____", ID);
 
-            api.sendMessage("ok chi : " + num, IDG);
+            api.sendMessage("Ok chi", IDG);
 
-            api.sendMessage("xac nhan dang sp", ID2)
+            api.sendMessage("Xac nhan dang sp", ID2)
+
+            api.sendMessage(" Time : " + d.toUTCString(), ID);
+
             api.sendMessage(" Time : " + d.toUTCString(), ID2);
 
-            num++;
+            api.sendMessage(" Time : " + d.toUTCString(), IDG);
+
             return;
         }
         //message.body = tin nhắn bạn send cho bot
@@ -45,18 +49,19 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
             // gui phan hoi cho ktv
             api.sendMessage("_____co sp moi nhe _____", ID);
             api.sendMessage("Check log có khách thì sp nhẽ !!", ID);
-            api.sendMessage("link :" + url, ID);
+            api.sendMessage("Link :" + url, ID);
             api.sendMessage("Time : " + d.toUTCString(), ID);
 
             // xac nhan da gui
-            api.sendMessage("xac nhan da gui thong tin sp", ID2)
+            api.sendMessage("Xac nhan da gui thong tin sp", ID2)
             api.sendMessage("Time : " + d.toUTCString(), ID2);
 
             return;
-        }
-        else if (message.body==="Karaoke"||message.body==="karaoke") {
-        	api.sendMessage("Link Add Music : https://goo.gl/forms/ibKrgHgD9KpRp0JA3",message.threadID);
-        	api.sendMessage("Link List Music : https://goo.gl/BsZEoq",message.threadID);
+        } else if (message.body === "Karaoke" || message.body === "karaoke") {
+            api.sendMessage("ok e ơi 1s thôi la đủ", message.threadID);
+            api.sendMessage("Link Add Music : https://goo.gl/forms/ibKrgHgD9KpRp0JA3", message.threadID);
+            api.sendMessage("Link List Music : https://goo.gl/BsZEoq", message.threadID);
+            return;
         }
     });
 });
