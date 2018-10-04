@@ -46,7 +46,7 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
             // gui phan hoi cho ktv
             api.sendMessage("_____co sp moi nhe _____", ID);
 
-            api.sendMessage("Check log có khách thì sp nhẽ !!", ID);
+            api.sendMessage(message.body, ID);
 
             api.sendMessage("Link :" + url, ID);
 
