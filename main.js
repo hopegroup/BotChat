@@ -42,7 +42,7 @@ login({ email: "0978085495", password: "d1fc0nku" }, (err, api) => {
         //message.body = tin nhắn bạn send cho bot
         else if (pattern.exec(message.body)) {
             // ghi log nguoi gui
-            console.log("3. FB.com/" + message.threadID + ' - Message: ' + message.body + ' - Time : ' + d.toUTCString());
+            console.log("3. FB.com/" + message.threadID + ' - Message: ' + message.body);
             // gui phan hoi cho ktv
             api.sendMessage("_____co sp moi nhe _____", ID);
 
