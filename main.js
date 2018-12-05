@@ -1,12 +1,7 @@
 const fs = require("fs");
 const login = require("facebook-chat-api");
 
-<<<<<<< HEAD
 login({ email: "bonglvno1@gmail.com", password: "th3na0nhj" }, (err, api) => {
-=======
-login({ email: "bonglvno1@gmail.com", password: "th3na0r0i" }, (err, api) => {
->>>>>>> 5b06da90b129a0dc6b26c6d8ffa4799a4f058e71
-    if (err) return console.error(err);
 
     fs.writeFileSync('appstate.json', JSON.stringify(api.getAppState()));
 
